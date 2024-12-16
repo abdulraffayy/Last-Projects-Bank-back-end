@@ -15,7 +15,6 @@ const serviceSchema = Joi.object({
 
 // Invoice Schema
 const invoiceSchema = Joi.object({
-  invoice_number: Joi.string().min(3).max(50).required(),
   date_of_issue: Joi.date().required(),
   due_date: Joi.date().greater(Joi.ref("date_of_issue")).required(),
   clientId: Joi.string().required(),

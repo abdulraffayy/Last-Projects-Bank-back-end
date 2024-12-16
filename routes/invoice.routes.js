@@ -7,7 +7,6 @@ const { invoiceSchema } = require("../utils/validation");
 
 router.post("/", validate(invoiceSchema), async (req, res) => {
   const {
-    invoice_number,
     date_of_issue,
     due_date,
     clientId,
@@ -16,6 +15,9 @@ router.post("/", validate(invoiceSchema), async (req, res) => {
     total,
     lineItems,
   } = req.body;
+
+  const count = await Invoice.countDocuments(); 
+  const invoice_number = `INV-${count + 1}`;
 
   const invoice = await Invoice.create({
     invoice_number,

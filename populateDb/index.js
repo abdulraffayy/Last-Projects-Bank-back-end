@@ -70,21 +70,21 @@ const paymentDetails = [
 
 const invoices = [
   {
-    invoice_number: "INV-001",
+    invoice_number: "INV-1",
     date_of_issue: new Date(),
     due_date: new Date(new Date().setDate(new Date().getDate() + 30)),
-    subtotal: 80000,
+    subtotal: 80,
     total: 85000,
   },
   {
-    invoice_number: "INV-002",
+    invoice_number: "INV-2",
     date_of_issue: new Date(),
     due_date: new Date(new Date().setDate(new Date().getDate() + 15)),
     subtotal: 50000,
     total: 52000,
   },
   {
-    invoice_number: "INV-003",
+    invoice_number: "INV-3",
     date_of_issue: new Date(),
     due_date: new Date(new Date().setDate(new Date().getDate() + 45)),
     subtotal: 70000,

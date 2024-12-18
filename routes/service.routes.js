@@ -10,52 +10,6 @@ router.post("/", validate(serviceSchema), async (req, res) => {
   const service = await Service.create(req.body);
   res.status(201).json(service);
 });
-
-
-
-// POST /api/service - Add new service to an existing invoice
-// router.post('/add', async (req, res) => {
-
-//   try {
-//     const { invoiceNumber, name, fee, hoursDays, amount } = req.body;
-
-//     // Validate input
-//     if (!invoiceNumber || !name || !fee || !hoursDays || !amount) {
-//       return res.status(400).json({ message: "Invoice Number, Name, Fee, and Hours/Days are required." });
-//     }
-
-//     // Create new service
-//     const newService = new Service({ name, fee });
-//     await newService.save();
-
-//     // Find the existing invoice using invoiceNumber
-//     const invoice = await Invoice.findOne({ invoice_number: invoiceNumber });
-//     if (!invoice) {
-//       return res.status(404).json({ message: "Invoice not found." });
-//     }
-
-//     // Update the invoice's subtotal and total by adding the new service fee
-//     invoice.subtotal += fee;
-//     invoice.total += fee;
-//     await invoice.save();
-
-//     // Create a new invoice line item to link the service to the invoice
-//     const newLineItem = new InvoiceLineItem({
-//       invoiceNumber: invoice._id,
-//       serviceId: newService._id,
-//       amount: amount,
-//       hoursDays: hoursDays, // Dynamic hours or days
-//     });
-//     await newLineItem.save();
-
-//     res.status(201).json({ message: 'Service added to invoice successfully!', service: newService });
-//   } catch (error) {
-//     console.error('Error adding service to invoice:', error);
-//     res.status(500).json({ message: 'Server error' });
-//   }
-// });
-
-
 router.post('/add', async (req, res) => {
   try {
     const { invoiceNumber, name, fee, hoursDays, amount } = req.body;

@@ -32,6 +32,7 @@ app.use("/api/services", serviceRoutes);
 app.use("/api/invoices", invoiceRoutes);
 app.use("/api/paymentdetails", paymentDetailsRoutes);
 app.use("/api/invoicelineitems", invoiceLineItemsRouter);
+app.use("/api/generate-pdf", require("./pdf/testPdf.js"));
 
 app.listen(port, () =>
   console.log(`Server running on http://localhost:${port}`)

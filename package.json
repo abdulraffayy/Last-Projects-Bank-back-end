@@ -16,7 +16,7 @@
     "express": "^4.21.1",
     "joi": "^17.13.3",
     "joi-objectid": "^4.0.2",
-    "mongoose": "^8.8.4",
+    "mongoose": "^8.9.2",
     "pdfkit": "^0.15.2"
   },
   "devDependencies": {
